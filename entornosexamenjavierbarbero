@@ -1,0 +1,118 @@
+## CREANDO CARPETAS ====================================================0
+
+alumnot@alumnot-vm:~$ sudo su
+[sudo] password for alumnot: 
+root@alumnot-vm:/home/alumnot# cd Escritorio/
+
+root@alumnot-vm:/home/alumnot/Escritorio# mkdir -p repoExamen/JAVIERED2/src/
+
+
+
+root@alumnot-vm:/home/alumnot/Escritorio# cd repoExamen/
+root@alumnot-vm:/home/alumnot/Escritorio/repoExamen# ls
+JAVIERED2
+root@alumnot-vm:/home/alumnot/Escritorio/repoExamen# cd JAVIERED2/
+root@alumnot-vm:/home/alumnot/Escritorio/repoExamen/JAVIERED2# ls
+src
+root@alumnot-vm:/home/alumnot/Escritorio/repoExamen/JAVIERED2# cd src/
+
+## CREANDO ARCHIVO=======================================================0
+
+root@alumnot-vm:/home/alumnot/Escritorio/repoExamen/JAVIERED2/src# nano Test.java
+## INICIALIZANDO GIT==============================================
+
+root@alumnot-vm:/home/alumnot/Escritorio/repoExamen/JAVIERED2/src# git init
+Initialized empty Git repository in /home/alumnot/Escritorio/repoExamen/JAVIERED2/src/.git/
+root@alumnot-vm:/home/alumnot/Escritorio/repoExamen/JAVIERED2/src# git status
+En la rama master
+
+Commit inicial
+
+Archivos sin seguimiento:
+  (use «git add <archivo>...» para incluir en lo que se ha de confirmar)
+
+	Test.java
+
+no se ha agregado nada al commit pero existen archivos sin seguimiento (use «git add» para darle seguimiento)
+
+
+##CONTENIDO TEST.JAVA=====================================================
+
+root@alumnot-vm:/home/alumnot/Escritorio/repoExamen/JAVIERED2/src# more Test.java 
+Rama Principal
+root@alumnot-vm:/home/alumnot/Escritorio/repoExamen/JAVIERED2/src# git add .
+root@alumnot-vm:/home/alumnot/Escritorio/repoExamen/JAVIERED2/src# git status
+En la rama master
+
+Commit inicial
+
+Cambios para hacer commit:
+  (use «git rm --cached <archivo>...» para sacar del stage)
+
+	nuevo archivo: Test.java
+
+root@alumnot-vm:/home/alumnot/Escritorio/repoExamen/JAVIERED2/src# git log
+fatal: your current branch 'master' does not have any commits yet
+root@alumnot-vm:/home/alumnot/Escritorio/repoExamen/JAVIERED2/src# git commit -m "primer commit"
+[master (root-commit) ea9cecd] primer commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 Test.java
+root@alumnot-vm:/home/alumnot/Escritorio/repoExamen/JAVIERED2/src# git log
+commit ea9cecd79c4199312fdc47f63af642bc37a466e9
+Author: javierbarbe <jb.siesto@gmail.com>
+Date:   Wed Mar 4 17:17:08 2020 +0100
+
+    primer commit
+ 
+
+
+git remote add origin https://github.com/javierbarbe/JAVIERED2
+
+
+root@alumnot-vm:/home/alumnot/Escritorio/repoExamen/JAVIERED2/src# git push --set-upstream origin master
+Username for 'https://github.com': javierbarbe
+Password for 'https://javierbarbe@github.com': 
+Counting objects: 3, done.
+Writing objects: 100% (3/3), 227 bytes | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/javierbarbe/JAVIERED2
+ * [new branch]      master -> master
+Branch master set up to track remote branch master from origin.
+root@alumnot-vm:/home/alumnot/Escritorio/repoExamen/JAVIERED2/src# git log
+commit ea9cecd79c4199312fdc47f63af642bc37a466e9
+Author: javierbarbe <jb.siesto@gmail.com>
+Date:   Wed Mar 4 17:17:08 2020 +0100
+
+    primer commit
+root@alumnot-vm:/home/alumnot/Escritorio/repoExamen/JAVIERED2/src# 
+
+
+## CREA RAMA SECUNDARIA =========================================
+
+root@alumnot-vm:/home/alumnot/Escritorio/repoExamen/JAVIERED2/src# git branch secundaria
+root@alumnot-vm:/home/alumnot/Escritorio/repoExamen/JAVIERED2/src# git status
+En la rama master
+Su rama está actualizada con «origin/master».
+nothing to commit, working directory clean
+root@alumnot-vm:/home/alumnot/Escritorio/repoExamen/JAVIERED2/src# git checkout secundaria
+Switched to branch 'secundaria'
+root@alumnot-vm:/home/alumnot/Escritorio/repoExamen/JAVIERED2/src# git branch
+  master
+* secundaria
+root@alumnot-vm:/home/alumnot/Escritorio/repoExamen/JAVIERED2/src# nano Test.java 
+root@alumnot-vm:/home/alumnot/Escritorio/repoExamen/JAVIERED2/src# more Test.java 
+Rama Secundaria
+
+
+root@alumnot-vm:/home/alumnot/Escritorio/repoExamen/JAVIERED2/src# git pull
+Already up-to-date.
+
+root@alumnot-vm:/home/alumnot/Escritorio/repoExamen/JAVIERED2/src# git checkout master
+Switched to branch 'master'
+Su rama está actualizada con «origin/master».
+root@alumnot-vm:/home/alumnot/Escritorio/repoExamen/JAVIERED2/src# more Test.java 
+Rama Principal
+
+
+
+
