@@ -114,5 +114,7 @@ root@alumnot-vm:/home/alumnot/Escritorio/repoExamen/JAVIERED2/src# more Test.jav
 Rama Principal
 
 
-
+para fusionar las ramas habria que hacer un pull , pero muestra que todo esta up-to-date...
+ni idea ... la salida depende de la rama en la que te encuentres... si es la master => Rama Principal
+si es la rama secundaria=> Rama Secundaria
 
